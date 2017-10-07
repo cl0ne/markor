@@ -5,7 +5,7 @@
     <string name="dark">Темная</string>
     <string name="delete">Удалить</string>
     <string name="rename">Переименовать</string>
-    <string name="confirm_delete">Подтвердить удаление</string>
+    <string name="confirm_delete">Подтвердите удаление</string>
     <string name="confirm_overwrite">Файл уже существует, перезаписать?</string>
     <string name="title">Заголовок</string>
     <string name="empty_directory">Эта директория пуста</string>
@@ -32,12 +32,12 @@
     <string name="pref_title__remember_directory">Помнить последнюю открытую директорию</string>
     <string name="pref_title__font_choice">Шрифт редактора заметок</string>
     <string name="pref_title__theme">Тема</string>
-    <string name="pref_title__preview_first">Сначала показать предпросмотр при открытии заметки</string>
+    <string name="pref_title__preview_first">Отображать предпросмотр при открытии заметки</string>
     <string name="about">О программе Markor</string>
     <string name="share_text">Просто текст</string>
     <string name="share_image">Изображение</string>
     <string name="pref_title__font_size">Размер шрифта</string>
-    <string name="pref_title__show_markdown_shortcuts">Показывать сокращения markdown</string>
+    <string name="pref_title__show_markdown_shortcuts">Показывать панель сокращений markdown</string>
     <string name="pref_title__highlighting_activated">Подсветка синтаксиса markdown</string>
     <string name="pref_title__highlighting_delay">Задержка обновления подсветки синтаксиса в миллисекундах</string>
     <string name="pref_title__highlighting_delay_summary">Большие значения меньше расходуют батарею</string>
@@ -70,8 +70,19 @@
     <string name="more_information">Больше информации</string>
     <string name="show_app_license">Показать лицензию приложения</string>
     <string name="show_third_party_licenses">Показать лицензии сторонних компонентов</string>
-    <string name="pref_desc__language">Сменить язык приложения. Перезагрузите для сохранения изменений.</string>
+    <string name="pref_desc__language">Сменить язык приложения. Изменения вступят в силу после перезапуска приложения.</string>
     <string name="pref_title__language">Язык</string>
     <string name="error_storage_permission">Нужно резрешение на запись чтобы сохранить</string>
+    <string name="format_link_dialog_title">Вставить ссылку</string>
+    <string name="format_image_dialog_title">Вставить изображение</string>
+    <string name="format_dialog_name_hint">Имя</string>
+    <string name="format_dialog_url_or_path_hint">URL / Путь</string>
+    <string name="open_with">Открыть в</string>
+    <string name="share_file">Файл</string>
+    <string name="share_pdf">PDF</string>
+    <string name="sort">Сортировка</string>
+    <string name="sort_by_date">Дата</string>
+    <string name="sort_by_name">Имя</string>
+    <string name="sort_by_size">Размер</string>
 
 </resources>
