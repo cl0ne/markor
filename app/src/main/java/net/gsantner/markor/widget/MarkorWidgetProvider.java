@@ -17,10 +17,13 @@ import android.net.Uri;
 import android.widget.RemoteViews;
 
 import net.gsantner.markor.R;
+import net.gsantner.markor.activity.DocumentActivity;
 import net.gsantner.markor.activity.MainActivity;
-import net.gsantner.markor.activity.NoteActivity;
 import net.gsantner.markor.model.Constants;
+import net.gsantner.markor.model.DocumentLoader;
 import net.gsantner.markor.util.AppSettings;
+
+import java.io.File;
 
 public class MarkorWidgetProvider extends AppWidgetProvider {
     @Override
@@ -57,10 +60,11 @@ public class MarkorWidgetProvider extends AppWidgetProvider {
             SharedPreferences sharedPreferences = context.getSharedPreferences(
                     "" + appWidgetIds[i], Context.MODE_PRIVATE);
             String directory = sharedPreferences.getString(Constants.WIDGET_PATH, AppSettings.get().getSaveDirectory());
-            Intent newNoteIntent = new Intent(context, NoteActivity.class)
-                    .putExtra(Constants.TARGET_DIR, directory);
+            Intent newDocumentIntent = new Intent(context, DocumentActivity.class)
+                    .putExtra(DocumentLoader.EXTRA_PATH, new File(directory))
+                    .putExtra(DocumentLoader.EXTRA_PATH_IS_FOLDER, true);
 
-            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, newNoteIntent, 0);
+            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, newDocumentIntent, 0);
             views.setOnClickPendingIntent(R.id.widget_new_note, pendingIntent);
 
             Intent goToMain = new Intent(context, MainActivity.class);
@@ -76,7 +80,7 @@ public class MarkorWidgetProvider extends AppWidgetProvider {
             views.setEmptyView(R.id.widget_list_container, R.id.widget_empty_hint);
             views.setRemoteAdapter(R.id.widget_notes_list, notesListIntent);
 
-            Intent openNoteIntent = new Intent(context, NoteActivity.class).setAction(Intent.ACTION_EDIT);
+            Intent openNoteIntent = new Intent(context, DocumentActivity.class).setAction(Intent.ACTION_EDIT);
             PendingIntent openNotePendingIntent = PendingIntent.getActivity(context, 0,
                     openNoteIntent, PendingIntent.FLAG_UPDATE_CURRENT);
             views.setPendingIntentTemplate(R.id.widget_notes_list, openNotePendingIntent);
